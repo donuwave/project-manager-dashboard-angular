@@ -1,3 +1,74 @@
+/* Светлая тема */
+:root {
+  --p-primary-color: #6C5CE7;
+  --p-primary-hover-color: #5E4DCB;
+  --p-primary-contrast-color: #ffffff;
+
+  --p-success-color: #66BB6A;
+  --p-success-hover-color: #55AA55;
+  --p-success-contrast-color: #ffffff;
+
+  --p-warning-color: #FFA726;
+  --p-warning-hover-color: #FF9800;
+  --p-warning-contrast-color: #ffffff;
+
+  --p-info-color: #4FC3F7;
+  --p-info-hover-color: #2FB5E8;
+  --p-info-contrast-color: #ffffff;
+
+  --p-danger-color: #EF5350;
+  --p-danger-hover-color: #E3423E;
+  --p-danger-contrast-color: #ffffff;
+
+  --p-surface-0: #F8F9FA;
+  --p-surface-50: #F1F3F5;
+  --p-surface-100: #E9EBED;
+  --p-surface-200: #DDE1E5;
+  --p-surface-300: #CDD4DB;
+  --p-surface-400: #B8C1CB;
+  --p-surface-500: #A0AAB4;
+  --p-surface-600: #87919B;
+  --p-surface-700: #6D7781;
+  --p-surface-800: #535C65;
+  --p-surface-900: #394149;
+
+  --p-content-color: #2D3748;
+  --p-content-border-color: #DBDBDB;
+  --p-text-color: #2D3748;
+  --p-text-color-secondary: #718096;
+  --p-placeholder-color: #A0AAB4;
+
+  --p-highlight-bg: #E0E0FF;
+  --p-highlight-text-color: #4C3ACD;
+
+  --p-focus-ring: 0 0 0 0.2rem rgba(108, 92, 231, 0.2);
+}
+
+/* Тёмная тема */
+.app-dark {
+  --p-surface-0: #1A202C;
+  --p-surface-50: #2D3748;
+  --p-surface-100: #4A5568;
+  --p-surface-200: #718096;
+  --p-surface-300: #9FA8BA;
+  --p-surface-400: #CBD5E0;
+  --p-surface-500: #E2E8F0;
+  --p-surface-600: #EDF2F7;
+  --p-surface-700: #F7FAFC;
+  --p-surface-800: #F8F9FA;
+  --p-surface-900: #FFFFFF;
+
+  --p-content-color: #E2E8F0;
+  --p-text-color: #E2E8F0;
+  --p-text-color-secondary: #CBD5E0;
+  --p-placeholder-color: #A0AAB4;
+
+  --p-highlight-bg: #2D3748;
+  --p-highlight-text-color: #C7C7FF;
+
+  --p-focus-ring: 0 0 0 0.2rem rgba(108, 92, 231, 0.4);
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -12,6 +83,13 @@ html:focus-within {
 
 html, body {
   height: 100%;
+  background: #E7E8EA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+  min-width: 100vw;
+  width: 100%;
 }
 
 body {

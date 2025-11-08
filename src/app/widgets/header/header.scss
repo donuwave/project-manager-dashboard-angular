@@ -1,5 +1,11 @@
 .header{
   padding: 22px 48px;
   width: 100%;
-  border-left: 1px solid red;
+  height: 88px;
+  border-left: 1px solid var(--p-content-border-color);
+  border-bottom: 1px solid var(--p-content-border-color);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import {InputText} from 'primeng/inputtext';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [
+    InputText
+  ],
   templateUrl: './header.html',
   styleUrl: './header.scss',
   standalone: true
