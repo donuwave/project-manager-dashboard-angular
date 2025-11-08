@@ -1,0 +1,65 @@
+<div class="board" cdkDropListGroup>
+  @for (col of columns; track col.id) {
+    <section class="column" [attr.data-color]="col.color">
+      <header class="col-header">
+        <div class="title">
+          <span class="dot"></span>{{ col.title }}
+          <span class="count">{{ col.tasks.length }}</span>
+        </div>
+        <button class="add" type="button" (click)="addTask(col.id)">+</button>
+      </header>
+
+      <div class="accent"></div>
+
+      <div class="list"
+           cdkDropList
+           [cdkDropListData]="col.tasks"
+           (cdkDropListDropped)="drop($event)">
+
+        @for (t of col.tasks; track t.id) {
+          <article class="card" cdkDrag [class.has-cover]="t.coverUrl">
+            @if (t.priority) {
+              <div class="badge" [ngClass]="t.priority!.toLowerCase()">{{ t.priority }}</div>
+            }
+
+            @if (t.coverUrl) {
+              <img class="cover" [src]="t.coverUrl" alt="" aria-hidden="true" />
+            }
+
+            <h3 class="title">{{ t.title }}</h3>
+            @if (t.description) {
+<!--              <p class="desc">{{ t.description }}</p>-->
+            }
+
+            <div class="meta">
+              <div class="faces">
+                @for (a of t.assignees.slice(0, 3); track a) {
+                  @if (a.startsWith('http')) {
+                    <img [src]="a" alt="" />
+                  } @else {
+                    <span class="initials">{{ a }}</span>
+                  }
+                }
+              </div>
+
+              <div class="stats">
+                <span class="stat">
+                  <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                    <path d="M21 6h-18v12h4v3l4-3h10z" fill="currentColor"/>
+                  </svg>
+                  {{ t.comments }} comments
+                </span>
+                <span class="stat">
+                  <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16l4-4h10a2 2 0 0 0 2-2V6z" fill="currentColor"/>
+                  </svg>
+                  {{ t.files }} files
+                </span>
+              </div>
+            </div>
+          </article>
+        }
+      </div>
+    </section>
+  }
+</div>

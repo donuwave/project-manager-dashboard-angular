@@ -4,10 +4,11 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { Header } from './widgets/header/header';
 import { Sidebar } from './widgets/sidebar/sidebar';
+import { BoardComponent } from './widgets/kanban-board/kanban-board'
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ButtonModule, InputTextModule, Header, Sidebar],
+  imports: [RouterOutlet, ButtonModule, InputTextModule, Header, Sidebar, BoardComponent],
   templateUrl: './app.html',
   standalone: true,
   styleUrl: './app.scss'

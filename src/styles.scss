@@ -1,5 +1,11 @@
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+
 /* Светлая тема */
 :root {
+  font-family: "InterVariable", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+
   --p-primary-color: #6C5CE7;
   --p-primary-hover-color: #5E4DCB;
   --p-primary-contrast-color: #ffffff;
