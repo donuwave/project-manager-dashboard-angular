@@ -1,9 +1,13 @@
+.aside{
+  height: 100%;
+}
+
 .aside--header {
-  height: 88px;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 88px;
+  border-bottom: 1px solid var(--p-content-border-color);
   font-size: 20px;
   font-weight: 700;
-  border-bottom: 1px solid var(--p-content-border-color);
 }
