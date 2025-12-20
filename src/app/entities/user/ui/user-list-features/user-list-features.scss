@@ -1,0 +1,17 @@
+.user-list-features{
+  display: grid;
+  text-align: start;
+  gap: 5px;
+  width: 200px;
+
+  &__item {
+    padding: 5px 5px 5px 10px;
+    text-align: start;
+    border-radius: 8px;
+    transition: .4s background;
+
+    &:hover {
+      background: #F5F5F5;
+    }
+  }
+}

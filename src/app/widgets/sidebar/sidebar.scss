@@ -1,13 +1,28 @@
-.aside{
+.aside {
   height: 100%;
+  border-right: 1px solid var(--p-content-border-color);
+  min-width: 250px;
 }
 
 .aside--header {
   display: flex;
   align-items: center;
-  justify-content: center;
   height: 88px;
   border-bottom: 1px solid var(--p-content-border-color);
   font-size: 20px;
   font-weight: 700;
+  padding-left: 22px;
+}
+
+.aside--main {
+  padding: 31px 0 31px 22px;
+  font-size: 20px;
+  font-weight: 700;
+  border-bottom: 1px solid var(--p-content-border-color);
+}
+
+.aside--footer {
+  display: grid;
+  gap: 20px;
+  padding: 31px 22px 31px 22px;
 }

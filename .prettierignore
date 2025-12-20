@@ -1,0 +1,8 @@
+dist
+coverage
+node_modules
+.angular
+*.min.*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml

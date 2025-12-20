@@ -1,0 +1,42 @@
+.header-profile{
+  display: grid;
+  align-items: center;
+  grid-template-columns:1fr max-content;
+  gap: 22px;
+  cursor: pointer;
+  text-align: end;
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__name{
+    color: #0D062D;
+    font-weight: 700;
+  }
+
+  &__town {
+    color: #787486;
+  }
+}
+
+
+.chevron-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 18px;
+  height: 18px;
+
+  line-height: 0;
+  vertical-align: middle;
+
+  transition: transform 150ms ease;
+}
+
+.header-profile.is-open .chevron-wrap {
+  transform: rotate(180deg);
+}

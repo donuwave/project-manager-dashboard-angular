@@ -1,0 +1,7 @@
+@if (projects$ | async; as projects) {
+  @for (project of projects; track project.id) {
+    <app-project-card [routerLink]="['/projects', project.id]" [project]="project"/>
+  }
+} @else {
+  <li>Загрузка...</li>
+}

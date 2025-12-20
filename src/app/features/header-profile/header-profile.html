@@ -1,0 +1,29 @@
+<div
+    class="header-profile"
+    [class.is-open]="popoverOpen"
+    role="button"
+    tabindex="0"
+    (click)="toggle(op, $event)"
+    (keydown.enter)="toggle(op, $event)"
+    (keydown.space)="$event.preventDefault(); toggle(op, $event)"
+  >
+    <div>
+      <p class="header-profile__name">{{(user$ | async)?.name}}</p>
+      <p class="header-profile__town">{{(user$ | async)?.country}}</p>
+    </div>
+
+    <div class="header-profile__icons">
+      <img alt="profile" src="/profile.png"/>
+      <span class="chevron-wrap">
+        <app-icon name="arrow-down" [size]="18" />
+      </span>
+    </div>
+  </div>
+
+<p-popover
+  #op
+  (onShow)="onPopoverShow()"
+  (onHide)="onPopoverHide()"
+>
+  <app-user-list-features />
+</p-popover>

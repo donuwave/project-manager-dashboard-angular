@@ -3,12 +3,15 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "icons": "node scripts/build-sprite.mjs",
+    "start": "npm run icons && ng serve --proxy-config proxy.conf.json",
+    "build": "npm run icons && ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:project": "node dist/project/server/server.mjs",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check"
   },
   "prettier": {
     "printWidth": 100,
@@ -37,6 +40,7 @@
     "@fontsource/inter": "^5.2.8",
     "@primeuix/themes": "^1.2.5",
     "express": "^5.1.0",
+    "ngx-cookie-service": "^20.1.1",
     "primeicons": "^7.0.0",
     "primeng": "^20.3.0",
     "rxjs": "~7.8.0",
@@ -57,6 +61,8 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "prettier": "^3.7.4",
+    "svgstore": "^3.0.1",
     "typescript": "~5.9.2",
     "typescript-eslint": "8.46.3"
   }

@@ -1,0 +1,40 @@
+.project-card{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.4s background;
+
+  &__name{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__point{
+    width: 8px;
+    height: 8px;
+    background: #7AC555;
+    border-radius: 99%;
+  }
+
+  &__close {
+    border-radius: 8px;
+    color: gray;
+
+    &:hover {
+      color: black;
+    }
+  }
+
+  &.is-active{
+    background: #f1effd;
+  }
+
+  &:hover {
+    background: #f1effd;
+    font-weight: 700;
+  }
+}

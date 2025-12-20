@@ -1,0 +1,11 @@
+@if (isEditing){
+  <input #inp [defaultValue]="name" type="text" placeholder="Введите значение" />
+
+  <button type="button" (click)="onSubmit(inp.value)">
+    Получить значение
+  </button>
+
+} @else {
+  <div class="project-value">{{name}}</div>
+  <button (click)="open()">Edit</button>
+}

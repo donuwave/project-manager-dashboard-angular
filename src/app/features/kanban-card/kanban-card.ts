@@ -1,17 +1,14 @@
-import {Component, Input, Output, EventEmitter, HostListener, OnChanges} from '@angular/core';
-import {Task} from '../../entities/kanban/model/kanban.types';
+import { Component, Input, Output, EventEmitter, HostListener, OnChanges } from '@angular/core';
+import { Task } from '../../entities/kanban/model/kanban.types';
 import { NgClass } from '@angular/common';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-kanban-card',
-  imports: [
-    NgClass,
-    FormsModule,
-  ],
+  imports: [NgClass, FormsModule],
   templateUrl: './kanban-card.html',
   styleUrl: './kanban-card.scss',
-  standalone: true
+  standalone: true,
 })
 export class KanbanCard implements OnChanges {
   @Input() task!: Task;
@@ -29,25 +26,37 @@ export class KanbanCard implements OnChanges {
   ngOnChanges() {
     if (this.editing) {
       this.draft.title = this.task.title ?? '';
-      this.draft.description = (this.task).description ?? '';
+      this.draft.description = this.task.description ?? '';
       this.draft.priority = this.task.priority;
     }
   }
 
-  toggleMenu(e: MouseEvent) { e.stopPropagation(); this.menuOpen = !this.menuOpen; }
-  @HostListener('document:click') closeMenu() { this.menuOpen = false; }
+  toggleMenu(e: MouseEvent) {
+    e.stopPropagation();
+    this.menuOpen = !this.menuOpen;
+  }
+  @HostListener('document:click') closeMenu() {
+    this.menuOpen = false;
+  }
 
-  startEdit() { this.menuOpen = false; this.editStart.emit(this.task.id); }
+  startEdit() {
+    this.menuOpen = false;
+    this.editStart.emit(this.task.id);
+  }
 
   save() {
     this.update.emit({
       ...this.task,
       title: this.draft.title,
       description: this.draft.description || undefined,
-      priority: this.draft.priority
+      priority: this.draft.priority,
     });
   }
 
-  cancel() { this.editCancel.emit(); }
-  onDelete() { this.remove.emit(this.task.id); }
+  cancel() {
+    this.editCancel.emit();
+  }
+  onDelete() {
+    this.remove.emit(this.task.id);
+  }
 }

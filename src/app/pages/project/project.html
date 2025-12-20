@@ -1,0 +1,10 @@
+@if (project$ | async; as project) {
+  <div class="project-info">
+    <app-project-edit (update)="onUpdate($event)" [name]="project.name"/>
+    <div>Invite</div>
+  </div>
+
+  <kanban-board />
+} @else {
+  <p>Загрузка...</p>
+}

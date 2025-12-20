@@ -1,0 +1,5 @@
+<div class="sidebar-menu">
+  @for (item of menu; track item.id) {
+    <a class="sidebar-menu__item" [routerLink]="item.src"> {{ item.title }}</a>
+  }
+</div>

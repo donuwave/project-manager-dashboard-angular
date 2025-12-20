@@ -9,4 +9,6 @@
 
 .body {
   padding: 50px;
+  overflow: auto;
+  height: calc(90dvh - 88px);
 }

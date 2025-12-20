@@ -1,0 +1,20 @@
+@if (user){
+  <div class="user-card">
+    <div class="user-card__info">
+      <img alt="profile" width="50" height="50" src="/profile.png"/>
+      <div>
+        <div class="user-card__name">{{user.name}}</div>
+        <div>{{user.country}}</div>
+      </div>
+    </div>
+
+    <div>
+      <button (click)="onChooseClick($event)" class="user-card__action">
+        <app-icon [size]="16" name="check-mark"/>
+      </button>
+      <button class="user-card__action">
+        <app-icon [size]="16" name="close"/>
+      </button>
+    </div>
+  </div>
+}

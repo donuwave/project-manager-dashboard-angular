@@ -4,14 +4,13 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { Header } from './widgets/header/header';
 import { Sidebar } from './widgets/sidebar/sidebar';
-import { BoardComponent } from './widgets/kanban-board/kanban-board'
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ButtonModule, InputTextModule, Header, Sidebar, BoardComponent],
+  imports: [RouterOutlet, ButtonModule, InputTextModule, Header, Sidebar],
   templateUrl: './app.html',
   standalone: true,
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
 export class App {
   protected readonly title = signal('project');

@@ -1,81 +1,91 @@
-@import "@fontsource/inter/400.css";
-@import "@fontsource/inter/500.css";
-@import "@fontsource/inter/600.css";
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
 
 /* Светлая тема */
 :root {
-  font-family: "InterVariable", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  font-family:
+    'InterVariable',
+    'Inter',
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial;
 
-  --p-primary-color: #6C5CE7;
-  --p-primary-hover-color: #5E4DCB;
+  --p-primary-color: #6c5ce7;
+  --p-primary-hover-color: #5e4dcb;
   --p-primary-contrast-color: #ffffff;
 
-  --p-success-color: #66BB6A;
-  --p-success-hover-color: #55AA55;
+  --p-success-color: #66bb6a;
+  --p-success-hover-color: #55aa55;
   --p-success-contrast-color: #ffffff;
 
-  --p-warning-color: #FFA726;
-  --p-warning-hover-color: #FF9800;
+  --p-warning-color: #ffa726;
+  --p-warning-hover-color: #ff9800;
   --p-warning-contrast-color: #ffffff;
 
-  --p-info-color: #4FC3F7;
-  --p-info-hover-color: #2FB5E8;
+  --p-info-color: #4fc3f7;
+  --p-info-hover-color: #2fb5e8;
   --p-info-contrast-color: #ffffff;
 
-  --p-danger-color: #EF5350;
-  --p-danger-hover-color: #E3423E;
+  --p-danger-color: #ef5350;
+  --p-danger-hover-color: #e3423e;
   --p-danger-contrast-color: #ffffff;
 
-  --p-surface-0: #F8F9FA;
-  --p-surface-50: #F1F3F5;
-  --p-surface-100: #E9EBED;
-  --p-surface-200: #DDE1E5;
-  --p-surface-300: #CDD4DB;
-  --p-surface-400: #B8C1CB;
-  --p-surface-500: #A0AAB4;
-  --p-surface-600: #87919B;
-  --p-surface-700: #6D7781;
-  --p-surface-800: #535C65;
+  --p-surface-0: #f8f9fa;
+  --p-surface-50: #f1f3f5;
+  --p-surface-100: #e9ebed;
+  --p-surface-200: #dde1e5;
+  --p-surface-300: #cdd4db;
+  --p-surface-400: #b8c1cb;
+  --p-surface-500: #a0aab4;
+  --p-surface-600: #87919b;
+  --p-surface-700: #6d7781;
+  --p-surface-800: #535c65;
   --p-surface-900: #394149;
 
-  --p-content-color: #2D3748;
-  --p-content-border-color: #DBDBDB;
-  --p-text-color: #2D3748;
+  --p-content-color: #2d3748;
+  --p-content-border-color: #dbdbdb;
+  --p-text-color: #2d3748;
   --p-text-color-secondary: #718096;
-  --p-placeholder-color: #A0AAB4;
+  --p-placeholder-color: #a0aab4;
 
-  --p-highlight-bg: #E0E0FF;
-  --p-highlight-text-color: #4C3ACD;
+  --p-highlight-bg: #e0e0ff;
+  --p-highlight-text-color: #4c3acd;
 
   --p-focus-ring: 0 0 0 0.2rem rgba(108, 92, 231, 0.2);
 }
 
 /* Тёмная тема */
 .app-dark {
-  --p-surface-0: #1A202C;
-  --p-surface-50: #2D3748;
-  --p-surface-100: #4A5568;
+  --p-surface-0: #1a202c;
+  --p-surface-50: #2d3748;
+  --p-surface-100: #4a5568;
   --p-surface-200: #718096;
-  --p-surface-300: #9FA8BA;
-  --p-surface-400: #CBD5E0;
-  --p-surface-500: #E2E8F0;
-  --p-surface-600: #EDF2F7;
-  --p-surface-700: #F7FAFC;
-  --p-surface-800: #F8F9FA;
-  --p-surface-900: #FFFFFF;
+  --p-surface-300: #9fa8ba;
+  --p-surface-400: #cbd5e0;
+  --p-surface-500: #e2e8f0;
+  --p-surface-600: #edf2f7;
+  --p-surface-700: #f7fafc;
+  --p-surface-800: #f8f9fa;
+  --p-surface-900: #ffffff;
 
-  --p-content-color: #E2E8F0;
-  --p-text-color: #E2E8F0;
-  --p-text-color-secondary: #CBD5E0;
-  --p-placeholder-color: #A0AAB4;
+  --p-content-color: #e2e8f0;
+  --p-text-color: #e2e8f0;
+  --p-text-color-secondary: #cbd5e0;
+  --p-placeholder-color: #a0aab4;
 
-  --p-highlight-bg: #2D3748;
-  --p-highlight-text-color: #C7C7FF;
+  --p-highlight-bg: #2d3748;
+  --p-highlight-text-color: #c7c7ff;
 
   --p-focus-ring: 0 0 0 0.2rem rgba(108, 92, 231, 0.4);
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -87,9 +97,10 @@ html:focus-within {
   scroll-behavior: smooth;
 }
 
-html, body {
+html,
+body {
   height: 100%;
-  background: #E7E8EA;
+  background: #e7e8ea;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -104,17 +115,30 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
   color: inherit;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: anywhere;
   text-wrap: pretty;
 }
@@ -129,7 +153,8 @@ table {
   border-spacing: 0;
 }
 
-button, [role="button"] {
+button,
+[role='button'] {
   cursor: pointer;
   border: none;
   background: none;
@@ -139,7 +164,9 @@ button, [role="button"] {
   html:focus-within {
     scroll-behavior: auto;
   }
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -151,4 +178,13 @@ button, [role="button"] {
   outline: none;
 }
 
-:root {}
+:root {
+}
+
+.p-popover:before {
+  content: none !important;
+}
+
+.ng-trigger:after{
+  content: none !important;
+}

@@ -1,10 +1,19 @@
 <header class="header">
-  <div>
-    <i class="pi pi-search"></i>
-    <input type="text" pInputText placeholder="Search for anything..."/>
-  </div>
-  <div>
-    <div>menu</div>
-    <div>profile</div>
+  <app-input />
+  <div class="header-info">
+    <app-header-menu />
+    <app-header-profile />
   </div>
 </header>
+
+<p-dialog
+  header="Сменить аккаунт"
+  [visible]="(visible$ | async) ?? false"
+  (visibleChange)="($event ? null : onHide())"
+  (onHide)="onHide()"
+  [modal]="true"
+  [dismissableMask]="true"
+  [style]="{ width: '420px' }"
+>
+  <app-users-list />
+</p-dialog>

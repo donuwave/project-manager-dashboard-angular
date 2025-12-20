@@ -1,0 +1,17 @@
+<svg
+  class="app-icon" 
+  [class]="className"
+  [attr.width]="size"
+  [attr.height]="size"
+  [attr.viewBox]="viewBox"
+  [attr.aria-hidden]="title ? null : 'true'"
+  [attr.role]="title ? 'img' : null"
+>
+  @if (title) {
+    <title>{{ title }}</title>
+  }
+  <use
+    [attr.href]="spritePath + '#' + name"
+    [attr.xlink:href]="spritePath + '#' + name"
+  ></use>
+</svg>

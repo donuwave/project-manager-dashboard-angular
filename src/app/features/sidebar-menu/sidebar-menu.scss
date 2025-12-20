@@ -1,0 +1,18 @@
+.sidebar-menu {
+  display: grid;
+  align-items: start;
+  align-content: start;
+  justify-content: start;
+  justify-items: start;
+  gap: 25px;
+}
+
+.sidebar-menu__item {
+  display: block;
+  color: #787486;
+  transition: color 0.5s;
+
+  &:hover {
+    color: #6c5ce7;
+  }
+}

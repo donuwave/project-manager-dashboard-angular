@@ -4,7 +4,7 @@
       <header class="col-header">
         <div class="title">
           <span class="dot"></span>
-            {{ col.title }}
+          {{ col.title }}
           <span class="count">{{ col.tasks.length }}</span>
         </div>
         <button class="add" type="button" (click)="addTask(col.id)">+</button>
@@ -12,11 +12,12 @@
 
       <div class="accent"></div>
 
-      <div class="list"
-           cdkDropList
-           [cdkDropListData]="col.tasks"
-           (cdkDropListDropped)="drop($event)">
-
+      <div
+        class="list"
+        cdkDropList
+        [cdkDropListData]="col.tasks"
+        (cdkDropListDropped)="drop($event)"
+      >
         @for (t of col.tasks; track t.id) {
           <app-kanban-card
             cdkDrag
@@ -26,11 +27,11 @@
             (editStart)="startEdit($event)"
             (editCancel)="endEdit()"
             (update)="updateTask(col.id, $event)"
-            (remove)="removeTask(col.id, $event)">
+            (remove)="removeTask(col.id, $event)"
+          >
           </app-kanban-card>
         }
       </div>
     </section>
   }
 </div>
-

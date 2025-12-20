@@ -1,10 +1,5 @@
 <article class="card">
-  <button
-    class="more"
-    type="button"
-    (click)="toggleMenu($event)"
-    aria-label="More"
-  >⋯</button>
+  <button class="more" type="button" (click)="toggleMenu($event)" aria-label="More">⋯</button>
 
   @if (menuOpen) {
     <div class="menu" (click)="$event.stopPropagation()">
@@ -15,13 +10,16 @@
 
   @if (editing) {
     <form class="edit" (ngSubmit)="save()">
-      <label>Title
+      <label
+        >Title
         <input [(ngModel)]="draft.title" name="title" required />
       </label>
-      <label>Description
+      <label
+        >Description
         <textarea [(ngModel)]="draft.description" name="description" rows="3"></textarea>
       </label>
-      <label>Badge
+      <label
+        >Badge
         <select [(ngModel)]="draft.priority" name="priority">
           <option [ngValue]="undefined">—</option>
           <option value="Low">Low</option>
@@ -42,26 +40,31 @@
 
     <h3 class="title">{{ task.title }}</h3>
 
-    @if (task.description) { <p class="desc">{{ task.description }}</p> }
+    @if (task.description) {
+      <p class="desc">{{ task.description }}</p>
+    }
 
     <div class="meta">
       <div class="faces">
         @for (a of task.assignees.slice(0, 3); track a) {
-          @if (a.startsWith('http')) { <img [src]="a" alt="" /> }
-          @else { <span class="initials">{{ a }}</span> }
+          @if (a.startsWith('http')) {
+            <img [src]="a" alt="" />
+          } @else {
+            <span class="initials">{{ a }}</span>
+          }
         }
       </div>
 
       <div class="stats">
         <span class="stat">
           <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
-            <path d="M21 6h-18v12h4v3l4-3h10z" fill="currentColor"/>
+            <path d="M21 6h-18v12h4v3l4-3h10z" fill="currentColor" />
           </svg>
           {{ task.comments }} comments
         </span>
         <span class="stat">
           <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16l4-4h10a2 2 0 0 0 2-2V6z" fill="currentColor"/>
+            <path d="M14 2H6a2 2 0 0 0-2 2v16l4-4h10a2 2 0 0 0 2-2V6z" fill="currentColor" />
           </svg>
           {{ task.files }} files
         </span>

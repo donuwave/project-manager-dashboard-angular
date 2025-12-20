@@ -1,0 +1,21 @@
+@if (project) {
+  <a
+    class="project-card"
+    [routerLink]="['/projects', project.id]"
+    routerLinkActive="is-active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    <div class="project-card__name">
+      <div class="project-card__point"></div>
+      <div>{{ project.name }}</div>
+    </div>
+
+    <button
+      type="button"
+      class="project-card__close"
+      (click)="onDelete(project.id); $event.preventDefault(); $event.stopPropagation()"
+    >
+      <app-icon [size]="12" name="close"></app-icon>
+    </button>
+  </a>
+}

@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
+import { SidebarMenu } from '../../features/sidebar-menu/sidebar-menu';
+import { ProjectsList } from '../projects-list/projects-list';
+import { CreateProject } from '../../features/create-project/create-project';
 
 @Component({
   selector: 'sidebar',
-  imports: [],
+  imports: [SidebarMenu, ProjectsList, CreateProject],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.scss',
-  standalone: true
+  standalone: true,
 })
-export class Sidebar {
-
-}
+export class Sidebar {}

@@ -1,0 +1,16 @@
+.user-card{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__info{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  &__name{
+    color: #0D062D;
+    font-weight: 700;
+  }
+}
