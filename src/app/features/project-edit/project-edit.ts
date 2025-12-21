@@ -1,8 +1,9 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { IconComponent } from '../../shared/ui/icon/icon';
 
 @Component({
   selector: 'app-project-edit',
-  imports: [],
+  imports: [IconComponent],
   templateUrl: './project-edit.html',
   styleUrl: './project-edit.scss',
   standalone: true,

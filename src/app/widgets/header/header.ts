@@ -6,6 +6,7 @@ import { UserChoiceDialogStore } from '../../entities/user/model/user-choice-dia
 import { AsyncPipe } from '@angular/common';
 import { Dialog } from 'primeng/dialog';
 import { UsersList } from '../../features/users-list/users-list';
+import { UserSessionStore } from '../../entities/user/model/user-session.store';
 
 @Component({
   selector: 'app-header',
@@ -16,10 +17,15 @@ import { UsersList } from '../../features/users-list/users-list';
 })
 export class Header {
   private dialog = inject(UserChoiceDialogStore);
+  private session = inject(UserSessionStore);
 
   visible$ = this.dialog.visible$;
 
   onHide() {
     this.dialog.close();
+  }
+
+  onChoiceUser(id: string) {
+    this.session.selectUser(id);
   }
 }

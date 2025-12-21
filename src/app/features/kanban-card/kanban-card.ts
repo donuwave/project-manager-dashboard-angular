@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter, HostListener, OnChanges } from 
 import { Task } from '../../entities/kanban/model/kanban.types';
 import { NgClass } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { IUpdateTask } from '../../entities/project/model/updateTask.types';
 
 @Component({
   selector: 'app-kanban-card',
@@ -14,7 +15,7 @@ export class KanbanCard implements OnChanges {
   @Input() task!: Task;
   @Input() editing = false;
 
-  @Output() update = new EventEmitter<Task>();
+  @Output() update = new EventEmitter<Omit<IUpdateTask, 'status'>>();
   @Output() remove = new EventEmitter<string>();
   @Output() editStart = new EventEmitter<string>();
   @Output() editCancel = new EventEmitter<void>();
@@ -46,10 +47,9 @@ export class KanbanCard implements OnChanges {
 
   save() {
     this.update.emit({
-      ...this.task,
+      taskID: this.task.id,
       title: this.draft.title,
-      description: this.draft.description || undefined,
-      priority: this.draft.priority,
+      description: this.draft.description || '',
     });
   }
 

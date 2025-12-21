@@ -1,5 +1,5 @@
 <div class="board" cdkDropListGroup>
-  @for (col of columns; track col.id) {
+  @for (col of (columns$ | async); track col.id) {
     <section class="column" [attr.data-color]="col.color">
       <header class="col-header">
         <div class="title">
@@ -27,7 +27,7 @@
             (editStart)="startEdit($event)"
             (editCancel)="endEdit()"
             (update)="updateTask(col.id, $event)"
-            (remove)="removeTask(col.id, $event)"
+            (remove)="removeTask($event)"
           >
           </app-kanban-card>
         }

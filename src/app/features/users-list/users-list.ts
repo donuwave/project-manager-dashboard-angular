@@ -1,5 +1,4 @@
-import { Component, inject } from '@angular/core';
-import { UserSessionStore } from '../../entities/user/model/user-session.store';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import { UserListStore } from '../../entities/user/model/user-list.store';
 import { UserChoiceDialogStore } from '../../entities/user/model/user-choice-dialog.store';
@@ -14,17 +13,16 @@ import { UserCard } from '../../entities/user/ui/user-card/user-card';
 })
 export class UsersList {
   private userStore = inject(UserListStore);
-  private session = inject(UserSessionStore);
   private dialog = inject(UserChoiceDialogStore);
+  @Output() choice = new EventEmitter<string>();
+  users$ = this.userStore.users$;
 
   onHide() {
     this.dialog.close();
   }
 
-  users$ = this.userStore.users$;
-
   onChoiceUser(id: string) {
-    this.session.selectUser(id);
     this.onHide();
+    this.choice.emit(id);
   }
 }

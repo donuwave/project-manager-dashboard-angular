@@ -1,10 +1,7 @@
-<header class="header">
-  <app-input />
-  <div class="header-info">
-    <app-header-menu />
-    <app-header-profile />
-  </div>
-</header>
+@if (project$ | async; as project) {
+  <button (click)="onOpen()">Invite</button>
+  <app-avatar-group [users]="project.users"/>
+}
 
 <p-dialog
   header="Сменить аккаунт"

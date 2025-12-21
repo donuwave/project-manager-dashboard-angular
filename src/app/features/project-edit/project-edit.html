@@ -1,11 +1,13 @@
 @if (isEditing){
-  <input #inp [defaultValue]="name" type="text" placeholder="Введите значение" />
+  <input class="project-edit__input" #inp [value]="name" type="text" placeholder="Введите значение" />
 
-  <button type="button" (click)="onSubmit(inp.value)">
-    Получить значение
+  <button class="project-edit__button-approve" (click)="onSubmit(inp.value)">
+    <app-icon [size]="16" name="check-mark"/>
   </button>
 
 } @else {
   <div class="project-value">{{name}}</div>
-  <button (click)="open()">Edit</button>
+  <button class="project-edit__button" (click)="open()">
+    <app-icon name="pen"/>
+  </button>
 }

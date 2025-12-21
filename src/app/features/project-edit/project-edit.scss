@@ -4,7 +4,34 @@
   gap: 20px;
 }
 
+.project-edit__input {
+  font-size: 46px;
+  font-weight: 700;
+  border: none;
+  max-width: 350px;
+}
+
+.project-edit__button {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  color: #5030E5;
+  fill: transparent;
+  height: 35px;
+
+  &-approve {
+    height: 35px;
+    border-radius: 10px;
+    fill: #5030E5;
+  }
+
+  & div {
+    height: 21px;
+  }
+}
+
 .project-value{
   font-size: 46px;
+  min-width: 350px;
   font-weight: 700;
 }

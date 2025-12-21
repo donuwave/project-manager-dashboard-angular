@@ -1,0 +1,22 @@
+<div
+  class="avatar-group"
+  [style.--size.px]="size"
+  [style.--overlap.px]="overlap"
+  [style.--ring.px]="ring"
+>
+  @for (u of visible; track trackByIndex($index)) {
+    <div class="avatar" [title]="u.name">
+      @if (u.avatarUrl) {
+        <img class="avatar__img" [src]="u.avatarUrl" [alt]="u.name" />
+      } @else {
+        <div class="avatar__fallback">{{ initials(u.name) }}</div>
+      }
+    </div>
+  }
+
+  @if (restCount > 0) {
+    <div class="avatar avatar--more" [title]="'Ещё ' + restCount">
+      +{{ restCount }}
+    </div>
+  }
+</div>
