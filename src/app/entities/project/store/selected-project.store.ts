@@ -121,6 +121,7 @@ export class SelectedProjectStore {
             id: el.id,
             title: el.title,
             description: el.description,
+            position: el.position,
             comments: 10,
             files: 1,
             priority: 'High',

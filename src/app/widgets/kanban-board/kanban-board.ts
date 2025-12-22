@@ -26,7 +26,7 @@ export class BoardComponent {
   columns$ = this.projectStore.onGetTasks$();
   private session = inject(UserSessionStore);
 
-  drop(event: CdkDragDrop<Task[]>) {
+  async drop(event: CdkDragDrop<Task[]>, colId: number) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
@@ -37,6 +37,14 @@ export class BoardComponent {
         event.currentIndex,
       );
     }
+
+    const moved = event.container.data[event.currentIndex];
+
+    await this.projectStore.onUpdateTask({
+      taskID: moved.id,
+      status: this.projectStore.getIndexStatus(colId),
+      position: event.currentIndex,
+    });
   }
 
   async addTask(colId: number) {

@@ -1,8 +1,9 @@
 import { TaskType } from '../../task/model/model/task.types';
 
 export interface IUpdateTask {
-  title: string;
-  description: string;
-  status: TaskType;
   taskID: string;
+  status: TaskType;
+  position?: number;
+  title?: string;
+  description?: string;
 }

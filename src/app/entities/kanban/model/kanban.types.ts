@@ -7,5 +7,6 @@ export interface Task {
   priority?: Priority;
   comments: number;
   files: number;
+  position: number;
   assignees: string[];
 }

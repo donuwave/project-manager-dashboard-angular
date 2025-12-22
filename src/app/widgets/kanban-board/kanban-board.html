@@ -16,7 +16,7 @@
         class="list"
         cdkDropList
         [cdkDropListData]="col.tasks"
-        (cdkDropListDropped)="drop($event)"
+        (cdkDropListDropped)="drop($event, col.id)"
       >
         @for (t of col.tasks; track t.id) {
           <app-kanban-card

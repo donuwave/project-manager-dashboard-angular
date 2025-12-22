@@ -6,6 +6,7 @@ export interface IProject {
   name: string;
   description: string;
   createdAt: string;
+  position: number;
   users: IUser[];
   tasks: ITask[];
 }
